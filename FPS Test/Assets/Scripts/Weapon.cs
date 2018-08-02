@@ -160,7 +160,6 @@ public class Weapon : MonoBehaviour
         {
             reloadNorm = true;
             reloadEmpty = false;
-            Debug.Log("JFDKLSJFLKDSJFLSDJLFKJSDLLFJDSLKLKJFITHEUIHT");
         }
 
         int bulletsToLoad = bulletsPerMag - currentBullets;

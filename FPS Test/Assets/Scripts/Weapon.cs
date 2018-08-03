@@ -22,15 +22,22 @@ public class Weapon : MonoBehaviour
 
 	public ParticleSystem muzzleFlash;
 	public AudioClip shootSound;
+    public AudioClip magOut;
+    public AudioClip magIn;
+    public AudioClip boltBack;
+    public AudioClip boltForward;
+    public AudioClip ironOut;
+    public AudioClip ironIn;
 
-	public float fireRate = 0.1f;
+    public float fireRate = 0.1f;
 	public float damage = 20f;
 	private bool reloadEmpty;
     private bool reloadNorm;
 
 	float fireTimer;
 	private bool isReloading;
-	private bool shootInput;
+    private bool isInspecting;
+    private bool shootInput;
 	private Vector3 originalPosition;
 	public Vector3 aimPosition;
 	public float aodSpeed = 8f;
@@ -69,13 +76,13 @@ public class Weapon : MonoBehaviour
 				DoReload();
 		}
 
-		if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             Reload();
             DoReload();
         }
 
-		if (fireTimer < fireRate)
+        if (fireTimer < fireRate)
 			fireTimer += Time.deltaTime;
 
 		AimDownSights();
@@ -90,29 +97,27 @@ public class Weapon : MonoBehaviour
 		isReloading = info.IsName("Reload");
 	}
 
-	private void AimDownSights()
-	{
-		if (Input.GetButton("Fire2") && !isReloading)
-		{
-			transform.localPosition = Vector3.Lerp(transform.localPosition, aimPosition, Time.deltaTime * aodSpeed);
-		}
-		else
-		{
-			transform.localPosition = Vector3.Lerp(transform.localPosition, originalPosition, Time.deltaTime * aodSpeed);
-		}
-	}
+    private void AimDownSights()
+    {
+        if (Input.GetButton("Fire2") && !isReloading)
+        {
+            transform.localPosition = Vector3.Lerp(transform.localPosition, aimPosition, Time.deltaTime * aodSpeed);
+        }
+        else
+        {
+            transform.localPosition = Vector3.Lerp(transform.localPosition, originalPosition, Time.deltaTime * aodSpeed);
+        }
+    }
 
-	private void Inspect()
+    private void Inspect()
     {
         if (Input.GetButtonDown("Fire3") && !isReloading)
         {
             anim.CrossFadeInFixedTime("Inspect", 0.01f);
-
-            Debug.Log("F KEY IS BEING SPAMMED");
         }
     }
 
-	private void Fire()
+    private void Fire()
 	{
 		if (fireTimer < fireRate || currentBullets <= 0 || isReloading)
 			return;
@@ -148,19 +153,10 @@ public class Weapon : MonoBehaviour
 		currentBullets--;
 		fireTimer = 0.0f;
 	}
-	
-	public void Reload()
+
+    public void Reload()
     {
-        if (bulletsLeft <= 0)
-        {
-            reloadEmpty = true;
-            reloadNorm = false;
-        }
-        else if (bulletsLeft > 0)
-        {
-            reloadNorm = true;
-            reloadEmpty = false;
-        }
+        if (bulletsLeft <= 0) return;
 
         int bulletsToLoad = bulletsPerMag - currentBullets;
         int bulletsToDeduct = (bulletsLeft >= bulletsToLoad) ? bulletsToLoad : bulletsLeft;
@@ -172,21 +168,11 @@ public class Weapon : MonoBehaviour
     private void DoReload()
     {
         AnimatorStateInfo info = anim.GetCurrentAnimatorStateInfo(0);
-
-        //if (isReloading) return;
-        
-        if (reloadEmpty)
-        {
-            anim.CrossFadeInFixedTime("Reload_Empty", 0.01f);
-        }
-        else if (reloadNorm)
-        {
-            anim.CrossFadeInFixedTime("Reload", 0.01f);
-        }
+        anim.CrossFadeInFixedTime("Reload", 0.01f);
     }
 
-	private void PlayShootSound()
-	{
-		_AudioSource.PlayOneShot(shootSound);
-	}
+    private void PlayShootSound()
+    {
+        _AudioSource.PlayOneShot(shootSound);
+    }
 }

@@ -11043,9 +11043,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 43b1e4192974f6e49998a394f466bf0f, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.15
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -11153,7 +11153,13 @@ MonoBehaviour:
     type: 2}
   muzzleFlash: {fileID: 28401425}
   shootSound: {fileID: 8300000, guid: 43b1e4192974f6e49998a394f466bf0f, type: 3}
-  fireRate: 0.135
+  magOut: {fileID: 8300000, guid: 2a7a92de6d94a3b48aac77ba47096cd1, type: 3}
+  magIn: {fileID: 8300000, guid: aea4fe629f9e19f4ab9183bbbc44f99a, type: 3}
+  boltBack: {fileID: 8300000, guid: 74a2cf978af6bba45a46ad71f732e181, type: 3}
+  boltForward: {fileID: 8300000, guid: bd4e875f2fdea1c44b5ba3f2ee0acd16, type: 3}
+  ironOut: {fileID: 8300000, guid: 3739881d5e319b041a658a48296c9a45, type: 3}
+  ironIn: {fileID: 8300000, guid: 69a15e040b0a1724da3037850ca3b1b4, type: 3}
+  fireRate: 0.125
   damage: 20
   aimPosition: {x: -0.1425, y: 0.04, z: -0.18}
   aodSpeed: 8

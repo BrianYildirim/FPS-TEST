@@ -30,6 +30,8 @@ public class Weapon : MonoBehaviour
     public float damage = 15f;
 
     private bool isReloading;
+    private bool isEmptyReloading;
+    private bool isInspecting;
     private bool shootInput;
 
     private void Start()
@@ -78,11 +80,13 @@ public class Weapon : MonoBehaviour
         AnimatorStateInfo info = anim.GetCurrentAnimatorStateInfo(0);
 
         isReloading = info.IsName("Reload");
+        isEmptyReloading = info.IsName("Reload_Empty");
+        isInspecting = info.IsName("Inspect");
     }
 
     private void Fire()
     {
-        if (fireTimer < fireRate || currentBullets <=0 || isReloading)
+        if (fireTimer < fireRate || currentBullets <=0 || isReloading || isEmptyReloading)
             return;
 
         RaycastHit hit;
@@ -128,8 +132,26 @@ public class Weapon : MonoBehaviour
         AnimatorStateInfo info = anim.GetCurrentAnimatorStateInfo(0);
 
         if (isReloading) return;
+        if (isEmptyReloading) return;
 
-        anim.CrossFadeInFixedTime("Reload", 0.01f);
+        if (currentBullets > 0)
+        {
+            anim.CrossFadeInFixedTime("Reload", 0.01f);
+        }
+        else if(currentBullets <= 0)
+        {
+            anim.CrossFadeInFixedTime("Reload_Empty", 0.01f);
+        }
+    }
+
+    private void Inspect()
+    {
+        if (isInspecting) return;
+
+        if(Input.GetButtonDown("Fire3"))
+        {
+            anim.CrossFadeInFixedTime("Inspect", 0.01f);
+        }
     }
 
     private void PlayShootSound()

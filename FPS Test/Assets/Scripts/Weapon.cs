@@ -32,6 +32,7 @@ public class Weapon : MonoBehaviour
     private bool isReloading;
     private bool isEmptyReloading;
     private bool isInspecting;
+    private bool isFiring;
     private bool shootInput;
 
     private void Start()
@@ -71,6 +72,11 @@ public class Weapon : MonoBehaviour
                 DoReload();
         }
 
+        if (Input.GetButtonDown("Fire3"))
+        {
+            Inspect();
+        }
+
         if (fireTimer < fireRate)
             fireTimer += Time.deltaTime;
     }
@@ -82,6 +88,7 @@ public class Weapon : MonoBehaviour
         isReloading = info.IsName("Reload");
         isEmptyReloading = info.IsName("Reload_Empty");
         isInspecting = info.IsName("Inspect");
+        isFiring = info.IsName("Fire");
     }
 
     private void Fire()
@@ -98,7 +105,7 @@ public class Weapon : MonoBehaviour
             hitParticlesEffect.transform.SetParent(hit.transform);
             GameObject bulletHole = Instantiate(bulletImpact, hit.point, Quaternion.FromToRotation(Vector3.forward, hit.normal));
             bulletHole.transform.SetParent(hit.transform);
-
+            
             Destroy(hitParticlesEffect, 1f);
             Destroy(bulletHole, 2f);
 
@@ -146,9 +153,7 @@ public class Weapon : MonoBehaviour
 
     private void Inspect()
     {
-        if (isInspecting) return;
-
-        if(Input.GetButtonDown("Fire3"))
+        if (Input.GetButtonDown("Fire3") && !isReloading && !isEmptyReloading && !isFiring && !isInspecting)
         {
             anim.CrossFadeInFixedTime("Inspect", 0.01f);
         }

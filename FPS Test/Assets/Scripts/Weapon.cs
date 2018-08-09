@@ -35,12 +35,17 @@ public class Weapon : MonoBehaviour
     private bool isFiring;
     private bool shootInput;
 
+    private Vector3 originalPosition;
+    public Vector3 aimPosition;
+    public float aodSpeed = 8;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
         _AudioSource = GetComponent<AudioSource>();
 
         currentBullets = bulletsPerMag;
+        originalPosition = transform.localPosition;
     }
 
     private void Update()
@@ -79,6 +84,8 @@ public class Weapon : MonoBehaviour
 
         if (fireTimer < fireRate)
             fireTimer += Time.deltaTime;
+
+        AimDownSights();
     }
 
     void FixedUpdate()
@@ -89,6 +96,18 @@ public class Weapon : MonoBehaviour
         isEmptyReloading = info.IsName("Reload_Empty");
         isInspecting = info.IsName("Inspect");
         isFiring = info.IsName("Fire");
+    }
+
+    private void AimDownSights()
+    {
+        if (Input.GetButtonDown("Fire2") && !isReloading && !isEmptyReloading && !isInspecting)
+        {
+            transform.localPosition = Vector3.Lerp(transform.localPosition, aimPosition, Time.deltaTime * aodSpeed);
+        }
+        else
+        {
+            transform.localPosition = Vector3.Lerp(transform.localPosition, originalPosition, Time.deltaTime * aodSpeed);
+        }
     }
 
     private void Fire()

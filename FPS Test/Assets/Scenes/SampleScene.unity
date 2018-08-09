@@ -452,8 +452,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.1
-      minScalar: 0.05
+      scalar: 0.3
+      minScalar: 0.1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5108,7 +5108,7 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.6
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -5117,9 +5117,9 @@ Light:
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_Bias: 0
+    m_NormalBias: 3
+    m_NearPlane: 0.1
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
@@ -9655,7 +9655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amount: 0.03
   maxAmount: 0.03
-  smoothAmount: 4
+  smoothAmount: 9
 --- !u!95 &1741505319
 Animator:
   serializedVersion: 3
@@ -9783,7 +9783,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b643dafee7ead6544a928bc1d76d36ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 100
+  range: 3.402823e+38
   bulletsPerMag: 30
   bulletsLeft: 200
   currentBullets: 0
@@ -9795,7 +9795,7 @@ MonoBehaviour:
     type: 2}
   muzzleFlash: {fileID: 28401425}
   shootSound: {fileID: 8300000, guid: 43b1e4192974f6e49998a394f466bf0f, type: 3}
-  fireRate: 0.14
+  fireRate: 0.13
   damage: 15
 --- !u!1 &1748547250
 GameObject:

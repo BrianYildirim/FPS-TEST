@@ -10854,36 +10854,6 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: AKM/magazine_Lod_0_0
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: AKM/magazine_Lod_0_0
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: AKM/magazine_Lod_0_0
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
     path: AKM/arms@smg/R_arm/R_elbow/R_forearm/R_wrist/R_point1/R_point2
     classID: 4
     script: {fileID: 0}
@@ -10914,7 +10884,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: AKM/arms@smg/R_arm/R_elbow/R_forearm/R_wrist/R_point1/R_point2/R_point3
+    path: AKM/arms@smg/R_arm/R_elbow/R_forearm/R_wrist/R_palm/R_ring1/R_ring2/R_ring3
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -10924,7 +10894,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: AKM/arms@smg/R_arm/R_elbow/R_forearm/R_wrist/R_point1/R_point2/R_point3
+    path: AKM/arms@smg/R_arm/R_elbow/R_forearm/R_wrist/R_palm/R_ring1/R_ring2/R_ring3
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -10934,7 +10904,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: AKM/arms@smg/R_arm/R_elbow/R_forearm/R_wrist/R_point1/R_point2/R_point3
+    path: AKM/arms@smg/R_arm/R_elbow/R_forearm/R_wrist/R_palm/R_ring1/R_ring2/R_ring3
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -10944,7 +10914,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: 
+    path: AKM/arms@smg/R_arm/R_elbow/R_forearm/R_wrist/R_point1
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -10954,7 +10924,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: 
+    path: AKM/arms@smg/R_arm/R_elbow/R_forearm/R_wrist/R_point1
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -10964,7 +10934,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: 
+    path: AKM/arms@smg/R_arm/R_elbow/R_forearm/R_wrist/R_point1
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -10995,6 +10965,96 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
     path: AKM
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: AKM/magazine_Lod_0_0
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: AKM/magazine_Lod_0_0
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: AKM/magazine_Lod_0_0
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: AKM/arms@smg/L_arm/L_elbow/L_forearm/L_wrist/L_point1/L_point2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: AKM/arms@smg/L_arm/L_elbow/L_forearm/L_wrist/L_point1/L_point2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: AKM/arms@smg/L_arm/L_elbow/L_forearm/L_wrist/L_point1/L_point2
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: AKM/arms@smg/R_arm/R_elbow/R_forearm/R_wrist/R_point1/R_point2/R_point3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: AKM/arms@smg/R_arm/R_elbow/R_forearm/R_wrist/R_point1/R_point2/R_point3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: AKM/arms@smg/R_arm/R_elbow/R_forearm/R_wrist/R_point1/R_point2/R_point3
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -11394,7 +11454,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: AKM/arms@smg/L_arm/L_elbow/L_forearm/L_wrist/L_point1/L_point2
+    path: 
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -11404,7 +11464,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: AKM/arms@smg/L_arm/L_elbow/L_forearm/L_wrist/L_point1/L_point2
+    path: 
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -11414,7 +11474,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: AKM/arms@smg/L_arm/L_elbow/L_forearm/L_wrist/L_point1/L_point2
+    path: 
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -11805,66 +11865,6 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
     path: AKM/arms@smg/R_arm/R_elbow/R_forearm/R_wrist/R_palm/R_ring1/R_ring2
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: AKM/arms@smg/R_arm/R_elbow/R_forearm/R_wrist/R_palm/R_ring1/R_ring2/R_ring3
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: AKM/arms@smg/R_arm/R_elbow/R_forearm/R_wrist/R_palm/R_ring1/R_ring2/R_ring3
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: AKM/arms@smg/R_arm/R_elbow/R_forearm/R_wrist/R_palm/R_ring1/R_ring2/R_ring3
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: AKM/arms@smg/R_arm/R_elbow/R_forearm/R_wrist/R_point1
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: AKM/arms@smg/R_arm/R_elbow/R_forearm/R_wrist/R_point1
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: AKM/arms@smg/R_arm/R_elbow/R_forearm/R_wrist/R_point1
     classID: 4
     script: {fileID: 0}
   - curve:

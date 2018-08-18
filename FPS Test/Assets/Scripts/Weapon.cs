@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
@@ -8,36 +9,40 @@ public class Weapon : MonoBehaviour
     private Animator anim;
     private AudioSource _AudioSource;
 
+    [Header("Properties")]
     public float range = 100f;
     public int bulletsPerMag = 30;
     public int bulletsLeft = 200;
-
+    public float damage = 15f;
     public int currentBullets;
-
+    public float fireRate = 0.125f;
     public enum ShootMode { Auto, Semi }
     public ShootMode shootingMode;
+    public float spreadFactor = 0.5f;
 
+    [Header("UI")]
+    public Text ammoText;
+
+    [Header("Setup")]
     public Transform shootPoint;
     public GameObject hitParticles;
     public GameObject bulletImpact;
-
     public ParticleSystem muzzleFlash;
+
+    [Header ("Sound Effects")]
     public AudioClip shootSound;
 
-    public float fireRate = 0.125f;
-
     float fireTimer;
-    public float damage = 15f;
-
     private bool isReloading;
     private bool isEmptyReloading;
     private bool isInspecting;
     private bool isFiring;
     private bool shootInput;
-
     private Vector3 originalPosition;
+
+    [Header("ADS")]
     public Vector3 aimPosition;
-    public float aodSpeed = 8;
+    public float aodSpeed = 5;
 
     private void Start()
     {
@@ -46,6 +51,8 @@ public class Weapon : MonoBehaviour
 
         currentBullets = bulletsPerMag;
         originalPosition = transform.localPosition;
+
+        UpdateAmmoText();
     }
 
     private void Update()
@@ -100,7 +107,7 @@ public class Weapon : MonoBehaviour
 
     private void AimDownSights()
     {
-        if (Input.GetButtonDown("Fire2") && !isReloading && !isEmptyReloading && !isInspecting)
+        if (Input.GetButton("Fire2") && !isReloading && !isEmptyReloading && !isInspecting)
         {
             transform.localPosition = Vector3.Lerp(transform.localPosition, aimPosition, Time.deltaTime * aodSpeed);
         }
@@ -117,7 +124,11 @@ public class Weapon : MonoBehaviour
 
         RaycastHit hit;
 
-        if(Physics.Raycast(shootPoint.position, shootPoint.transform.forward, out hit, range))
+        Vector3 shootDirection = shootPoint.transform.forward;
+        shootDirection.x += Random.Range(-spreadFactor, spreadFactor);
+        shootDirection.y += Random.Range(-spreadFactor, spreadFactor);
+
+        if (Physics.Raycast(shootPoint.position, shootDirection, out hit, range))
         {
             Debug.Log(hit.transform.name + " found!");
             GameObject hitParticlesEffect = Instantiate(hitParticles, hit.point, Quaternion.FromToRotation(Vector3.up, hit.normal));
@@ -139,6 +150,9 @@ public class Weapon : MonoBehaviour
         PlayShootSound();
 
         currentBullets--;
+
+        UpdateAmmoText();
+
         fireTimer = 0.0f;
     }
 
@@ -151,6 +165,8 @@ public class Weapon : MonoBehaviour
 
         bulletsLeft -= bulletsToDeduct;
         currentBullets += bulletsToDeduct;
+
+        UpdateAmmoText();
     }
 
     private void DoReload()
@@ -181,5 +197,10 @@ public class Weapon : MonoBehaviour
     private void PlayShootSound()
     {
         _AudioSource.PlayOneShot(shootSound);
+    }
+
+    private void UpdateAmmoText()
+    {
+        ammoText.text = currentBullets + " / " + bulletsLeft;
     }
 }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1655319719664a44e928f36a9c166c84
+guid: 55e1e9cd536a3b147b024087adaccb2b
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,9 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Gunplay
+  fontName: Neuropol X
   fontNames:
-  - Gunplay
+  - Neuropol X
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

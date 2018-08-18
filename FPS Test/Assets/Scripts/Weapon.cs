@@ -31,6 +31,12 @@ public class Weapon : MonoBehaviour
 
     [Header ("Sound Effects")]
     public AudioClip shootSound;
+    public AudioClip magOut;
+    public AudioClip magIn;
+    public AudioClip boltBack;
+    public AudioClip boltRelease;
+    public AudioClip ironIn;
+    public AudioClip ironOut;
 
     float fireTimer;
     private bool isReloading;
@@ -197,6 +203,36 @@ public class Weapon : MonoBehaviour
     private void PlayShootSound()
     {
         _AudioSource.PlayOneShot(shootSound);
+    }
+
+    private void PlayMagOutSound()
+    {
+        _AudioSource.PlayOneShot(magOut);
+    }
+
+    private void PlayMagInSound()
+    {
+        _AudioSource.PlayOneShot(magIn);
+    }
+
+    private void PlayBoltBackSound()
+    {
+        _AudioSource.PlayOneShot(boltBack);
+    }
+
+    private void PlayBoltReleaseSound()
+    {
+        _AudioSource.PlayOneShot(boltRelease);
+    }
+
+    private void PlayIronInSound()
+    {
+        _AudioSource.PlayOneShot(ironIn);
+    }
+
+    private void PlayIronOutSound()
+    {
+        _AudioSource.PlayOneShot(ironOut);
     }
 
     private void UpdateAmmoText()

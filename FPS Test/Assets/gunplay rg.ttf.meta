@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0cb792b5c87c23e4ba92144ec9e7fe7e
+guid: 1655319719664a44e928f36a9c166c84
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,9 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Unipix
+  fontName: Gunplay
   fontNames:
-  - Unipix
+  - Gunplay
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
